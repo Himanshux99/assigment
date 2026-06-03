@@ -18,7 +18,9 @@ jobs:
         run: docker run -d --name applepie -p 8080:80 assignment:latest
 
       - name: Curl the website
-        run: curl localhost:8080
+        run: 
+          sleep 5
+          curl localhost:8080
 
       - name: Docker logs
         run: docker logs applepie
