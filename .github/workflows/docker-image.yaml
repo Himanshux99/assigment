@@ -17,14 +17,14 @@ jobs:
       - name: Create the container
         run: docker run -d --name applepie -p 8080:80 assignment:latest
 
-  logs:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Curl the website
         run: |
           sleep 5
           curl localhost:8080
 
+  logs:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Docker logs
         run: docker logs applepie
